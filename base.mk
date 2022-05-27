@@ -11,15 +11,12 @@
 # path.
 
 # GAS assembler.
-ASFLAGS=
-AS=as
+ASFLAGS ?=
+AS ?= as
 
-# AR_FLAGS
-# Flags that are passed to the archive utility
-
-# LD_FLAGS
-# Flags that are passed to the linker (links all the object files
-# into a single .bin file).
+# Linker
+LDFLAGS ?=
+LD ?= ld
 
 # STRIP_FLAGS
 # Flags that are passed to the (binary) stripper.

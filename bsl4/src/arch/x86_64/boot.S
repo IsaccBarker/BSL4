@@ -22,7 +22,7 @@ stack_top:
 _start:
 	mov $stack_top, %esp
 
-	call bsl4_entry
+	call bsl4_enter
 
 	cli
 1:  hlt
