@@ -31,7 +31,7 @@ AS=as
 BUILD_MODE=debug
 
 # Platform shit.
-ARCH ?= aarch64
+ARCH ?= x86_64
 
 # DO NOT SET THESE
 # These are basically internal global variables

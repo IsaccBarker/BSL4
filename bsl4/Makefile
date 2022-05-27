@@ -1,8 +1,15 @@
 include ../base.mk
 
-all:
+all: kernel boot.o
+	ld -o ./target/$(ARCH)-unknown-none/debug/bsl4.bin ./target/$(ARCH)-unknown-none/debug/deps/*.o
+	echo "Done!"
+
+.PHONY: kernel
+kernel:
 	xargo -v build $(CARGO_FLAGS) --features "$(ARCH)" --target $(ARCH)-unknown-none
-	mv ./target/$(ARCH)-unknown-none/$(BUILD_MODE)/bsl4 ./target/$(ARCH)-unknown-none/$(BUILD_MODE)/bsl4.bin
+
+boot.o: ./src/arch/$(ARCH)/boot.S
+	$(AS) -o ./target/$(ARCH)-unknown-none/debug/deps/boot.o ./src/arch/$(ARCH)/boot.S $(ASFLAGS)
 
 clean:
 	cargo clean

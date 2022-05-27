@@ -5,7 +5,7 @@ mod panic;
 
 /// Entry.
 #[no_mangle]
-pub extern "C" fn _start() -> ! {
+pub extern "C" fn bsl4_enter() -> ! {
     loop {}
 }
 

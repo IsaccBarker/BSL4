@@ -2,9 +2,8 @@ include base.mk
 
 # TODO: Generalize platform once available.
 
-all:
+all: check_cargo check_xargo getenv
 	$(MAKE) -C bsl4 all
-	$(MAKE) -C bsl4-boot all
 	echo "Done!"
 
 check_cargo:
@@ -27,5 +26,4 @@ endif
 
 clean:
 	$(MAKE) -C bsl4 clean
-	$(MAKE) -C bsl4-boot clean
 
