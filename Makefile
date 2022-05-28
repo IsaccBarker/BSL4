@@ -1,11 +1,16 @@
 include base.mk
 
-# TODO: Generalize platform once available.
+BASE="$(shell pwd)"
 
 all:
-	$(MAKE) -C bsl4 all
-	$(PROGRESS) "All" "Done!"
+	@mkdir -p "$(BASE)/target"
+	@mkdir -p "$(BASE)/target/obj"
+	@mkdir -p "$(BASE)/target/out"
+	@mkdir -p "$(BASE)/target/intermediate"
+	@$(MAKE) -C bsl4 BASE="$(BASE)" all
+	$(PROGRESS) "Status" "Done!"
 
 clean:
-	$(MAKE) -C bsl4 clean
+	@rm -rf target
+	$(PROGRESS) "Status" "Cleaned!"
 

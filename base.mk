@@ -1,3 +1,6 @@
+# Archecture
+ARCH ?= x86_64
+
 # C compiler
 CFLAGS ?=
 CC ?= gcc
