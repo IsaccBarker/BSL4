@@ -1,14 +1,6 @@
-# TARGET
-# The target to assemble for
-
-# ARCH
-# The archecture of the target platform. Should
-# coraspond to directories inside `arch`.
-
-# TOOLCHAIN_PREFIX
-# The prefix on where to look for the keychain.
-# May be left empty if the toolchain is in your
-# path.
+# C compiler
+CFLAGS ?=
+CC ?= gcc
 
 # GAS assembler.
 ASFLAGS ?=
@@ -18,22 +10,10 @@ AS ?= as
 LDFLAGS ?=
 LD ?= ld
 
-# STRIP_FLAGS
-# Flags that are passed to the (binary) stripper.
-
-# CARGO_FLAGS
-# Flags that are passed to cargo during the build of the kernel.
-
 # What kind of build do we do (debug/release)?
 BUILD_MODE=debug
 
-# Platform shit.
-ARCH ?= x86_64
-
-# DO NOT SET THESE
-# These are basically internal global variables
+# ---
 
 PROGRESS := @printf "  \\033[1;32m%8s\\033[0m  \\033[1;m%s\\033[0m\\n"
-SLK_LOCATION=
-BACKEND=
 
