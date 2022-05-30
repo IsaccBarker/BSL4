@@ -1,22 +1,4 @@
-# BSL4
-An exokernel for a bygone era. Built for x86\_64, it should be able to compile out of the box on most
-modern machines (unless you are running x86 or some ARM processor, like on an M1).
-
-It's written in a mix of C and Rust. C comes into play where Rust would mostly be unsafe code, such as
-in the very early stages of booting. Other than that, Rust is used.
-
-## Building
-So far, there is no Rust code, only C. If you are on a non x86\_64 platform, please build a cross compiler,
-and set the `CC`, `LD`, and `AS` environment variable it's location, or the name of the executable if it is
-in your path.
-
-```
-make
-```
-
-### Building a x86_64 cross compiler on a Mac
-I do most of my development on my school laptop, running an M1, which means I had to get a cross compiler working. *It is a pain in the ass
-and it's really convoluted.* I've added instructions here for future reference.
+Development suspended while I write my LasV bootloader. Below is not informational, but just a reminder on how to build a x86_64 cross compiler on an M1.
 
 First, you have to build binutils
 ```
